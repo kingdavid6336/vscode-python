@@ -4,6 +4,7 @@
 
 ### Enhancements
 
+
 1. Enable reload feature for debugging web apps.
    ([#3473](https://github.com/Microsoft/vscode-python/issues/3473))
 1. Activate conda environment using path when name is not available.
