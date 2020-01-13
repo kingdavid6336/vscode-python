@@ -28,7 +28,6 @@ import { EnvironmentActivationService } from '../client/interpreter/activation/s
 import { IEnvironmentActivationService } from '../client/interpreter/activation/types';
 import { IInterpreterAutoSelectionService, IInterpreterAutoSeletionProxyService } from '../client/interpreter/autoSelection/types';
 import {
-    CONDA_ENV_FILE_SERVICE,
     CONDA_ENV_SERVICE,
     CURRENT_PATH_SERVICE,
     GLOBAL_VIRTUAL_ENV_SERVICE,
@@ -45,7 +44,6 @@ import {
 import { InterpreterService } from '../client/interpreter/interpreterService';
 import { PythonInterpreterLocatorService } from '../client/interpreter/locators';
 import { InterpreterLocatorHelper } from '../client/interpreter/locators/helpers';
-import { CondaEnvFileService } from '../client/interpreter/locators/services/condaEnvFileService';
 import { CondaEnvService } from '../client/interpreter/locators/services/condaEnvService';
 import { CurrentPathService } from '../client/interpreter/locators/services/currentPathService';
 import { GlobalVirtualEnvService } from '../client/interpreter/locators/services/globalVirtualEnvService';
@@ -167,7 +165,6 @@ export class IocContainer {
     public registerMockInterpreterTypes() {
         this.serviceManager.addSingleton<IInterpreterService>(IInterpreterService, InterpreterService);
         this.serviceManager.addSingleton<IInterpreterLocatorService>(IInterpreterLocatorService, PythonInterpreterLocatorService, INTERPRETER_LOCATOR_SERVICE);
-        this.serviceManager.addSingleton<IInterpreterLocatorService>(IInterpreterLocatorService, CondaEnvFileService, CONDA_ENV_FILE_SERVICE);
         this.serviceManager.addSingleton<IInterpreterLocatorService>(IInterpreterLocatorService, CondaEnvService, CONDA_ENV_SERVICE);
         this.serviceManager.addSingleton<IInterpreterLocatorService>(IInterpreterLocatorService, CurrentPathService, CURRENT_PATH_SERVICE);
         this.serviceManager.addSingleton<IInterpreterLocatorService>(IInterpreterLocatorService, GlobalVirtualEnvService, GLOBAL_VIRTUAL_ENV_SERVICE);
